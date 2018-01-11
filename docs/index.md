@@ -2,6 +2,14 @@
 
 This is a particularly interesting report. It creates a mail merged letter, but pulls the content of the letter from a Google doc. This makes it easy to change the contents of the letter, and have someone who is unfamiliar with HTML or Liquid change the report if needed.
 
+Three variables need to be set. The first two are image files for headers and footers of letterhead. If that is not needed the HTML can simply be removed. The third variable is called google_doc_key and is a string that references the file on the Google Drive.
+
+The document should be setup with no margins and published to the web. When that is done find the link which should look something like:
+
+https://docs.google.com/document/d/e/[String Goes Here]/pub
+
+Copy the value of the string between /d/e/ and /pub. Set this as the google_doc_key variable in the report and it should work properly.
+
 I copied this method from someone else but forgot who. If this was your implementation let me know so I can give you full credit!
 
 This report is best generated as a PDF file.
