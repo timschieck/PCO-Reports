@@ -1,6 +1,6 @@
 {% assign letterhead_header = "header.png" %}
 {% assign letterhead_footer = "footer.png" %}
-{% assign iframe_link = 'https://docs.google.com/document/d/e/[insert_document_key]/pub' %}
+{% assign google_doc_key = "[Insert Document Key]" %}
 <html lang="en">
   <head>
     <style type="text/css" media="all">
@@ -52,7 +52,7 @@
   </p>
   <p>Dear {{ person.first_name }}, </p>
 
-      <iframe src="{{ iframe_link }}?embedded=true" width="100%" height="530" frameborder="0" marginheight="0" marginwidth="0" scrolling="no"></iframe>
+      <iframe src="https://docs.google.com/document/d/e/{{ google_doc_key }}/pub?embedded=true" width="100%" height="530" frameborder="0" marginheight="0" marginwidth="0" scrolling="no"></iframe>
   <img class="footer" src="{{ letterhead_footer }}" />
   </div>      {% endfor %}
     </div>
