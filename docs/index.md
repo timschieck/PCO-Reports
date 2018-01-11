@@ -2,7 +2,10 @@
 
 This is a particularly interesting report. It creates a mail merged letter, but pulls the content of the letter from a Google doc. This makes it easy to change the contents of the letter, and have someone who is unfamiliar with HTML or Liquid change the report if needed.
 
+I copied this method from someone else but forgot who. If this was your implementation let me know so I can give you full credit!
+
 This report is best generated as a PDF file.
+[Download Here](https://raw.githubusercontent.com/tschieck/PCO-Reports/master/mail_merge.liquid)
 
 # Attendance Checklist
 
@@ -11,5 +14,15 @@ This report generates a checklist that can be printed off and used to take atten
 It also has a few lines at the end for writing in the name of guests.
 
 This report is best generated as an HTML file.
+[Download Here](https://raw.githubusercontent.com/tschieck/PCO-Reports/master/attendance_checklist.liquid)
+
+# Grade Report
+
+This report generates a list of children with their grade, school, and age. Starting from 12th and going in descending order. Any child younger than Pre-K is put in at the end under "Other".
+
+It's not a particularly detailed report but is helpful for seeing how many kids are in each grade.
+
+This report works as either HTML or PDF
+[Download Here](https://raw.githubusercontent.com/tschieck/PCO-Reports/master/grade_report.liquid)
 
 [Home](../)
