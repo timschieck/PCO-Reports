@@ -18,7 +18,8 @@
 	<div id="content">
     <h2>12th Grade</h2>
     <table>
-{% for person in people order:ascending %}
+{% assign people = people | sort: 'last_name' %}
+{% for person in people  %}
       {% if person.grade == 12 %}
 
     <tr>
