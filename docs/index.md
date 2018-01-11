@@ -1,2 +1,2 @@
-**Mail Merge**
+*Mail Merge*
 This is a particularly interesting report. It creates a mail merged letter, but pulls the content of the letter from a Google doc. This makes it easy to change the contents of the letter, and have someone who is unfamiliar with HTML or Liquid change the report if needed.
