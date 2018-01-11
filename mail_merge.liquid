@@ -2,47 +2,40 @@
 {% assign letterhead_footer = "footer.png" %}
 {% assign google_doc_key = "[Insert Document Key]" %}
 <html lang="en">
-  <head>
-    <style type="text/css" media="all">
-      body { size: 8.5in 11in; }
+<head>
+  <style type="text/css" media="all">
+  body { size: 8.5in 11in; }
+  .body { margin-left: 1in; margin-right: 1in; }
+  .header { height: 2in; position: float; top: 0px; }
+  .footer {
+    bottom: 0;
+    width: 8.5in;
+    height: .83in;
+    position:absolute;
+    left: 0px;
+  }
+  </style>
+</head>
+<body>
+  {% for person in people%}
 
-      .body { margin-left: 1in; margin-right: 1in; }
-
-        .header {
-          height: 2in;
-          position: float;
-          top: 0px;
-        }
-
-      .footer {
-        bottom: 0;
-        width: 8.5in;
-        height: .83in;
-        position:absolute;
-        left: 0px;
-      }
-    </style>
-  </head>
-  <body>
-    {% for person in people%}
-
-<div style="size: 8.5in 11.5in; page-break-after: always;">
-<img class="header" src="{{ letterhead_header }}">
-<div class="body">
- <p>
-   {{ 'now' | date: "%B %d, %Y" }}
-  </p>
-  <p>
-    {{ person.first_name }} {{ person.last_name }} <br />
-    {% for address in person.addresses %}
-      {{ address.postal_address }}
-    {% endfor %}
-  </p>
-  <p>Dear {{ person.first_name }}, </p>
+  <div style="size: 8.5in 11.5in; page-break-after: always;">
+    <img class="header" src="{{ letterhead_header }}">
+    <div class="body">
+      <p>
+        {{ 'now' | date: "%B %d, %Y" }}
+      </p>
+      <p>
+        {{ person.first_name }} {{ person.last_name }} <br />
+        {% for address in person.addresses %}
+        {{ address.postal_address }}
+        {% endfor %}
+      </p>
+      <p>Dear {{ person.first_name }}, </p>
 
       <iframe src="https://docs.google.com/document/d/e/{{ google_doc_key }}/pub?embedded=true" width="100%" height="530" frameborder="0" marginheight="0" marginwidth="0" scrolling="no"></iframe>
-  <img class="footer" src="{{ letterhead_footer }}" />
-  </div>      {% endfor %}
-    </div>
-  </body>
+      <img class="footer" src="{{ letterhead_footer }}" />
+    </div>      {% endfor %}
+  </div>
+</body>
 </html>
