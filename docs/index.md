@@ -13,6 +13,7 @@ Copy the value of the string between /d/e/ and /pub. Set this as the google_doc_
 I copied this method from someone else but forgot who. If this was your implementation let me know so I can give you full credit!
 
 This report is best generated as a PDF file.
+
 [Download Here](https://raw.githubusercontent.com/tschieck/PCO-Reports/master/mail_merge.liquid)
 
 # Attendance Checklist
@@ -22,6 +23,7 @@ This report generates a checklist that can be printed off and used to take atten
 It also has a few lines at the end for writing in the name of guests.
 
 This report is best generated as an HTML file.
+
 [Download Here](https://raw.githubusercontent.com/tschieck/PCO-Reports/master/attendance_checklist.liquid)
 
 # Grade Report
@@ -31,6 +33,7 @@ This report generates a list of children with their grade, school, and age. Star
 It's not a particularly detailed report but is helpful for seeing how many kids are in each grade.
 
 This report works as either HTML or PDF
+
 [Download Here](https://raw.githubusercontent.com/tschieck/PCO-Reports/master/grade_report.liquid)
 
 [Home](../)
