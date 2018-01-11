@@ -5,7 +5,8 @@
 <head>
   <style type="text/css" media="all">
   body { size: 8.5in 11in; }
-  .body { margin-left: 1in; margin-right: 1in; }
+  #page_body {size: 8.5in 11.5in; page-break-after: always; }
+  .content { margin-left: 1in; margin-right: 1in; }
   .header { height: 2in; position: float; top: 0px; }
   .footer {
     bottom: 0;
@@ -19,9 +20,9 @@
 <body>
   {% for person in people%}
 
-  <div style="size: 8.5in 11.5in; page-break-after: always;">
+  <div id="page_body">
     <img class="header" src="{{ letterhead_header }}">
-    <div class="body">
+    <div class="content">
       <p>
         {{ 'now' | date: "%B %d, %Y" }}
       </p>
