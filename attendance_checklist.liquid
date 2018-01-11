@@ -10,11 +10,7 @@
 <body>
   <div class="header">
     <div class="left">
-<<<<<<< HEAD
       <img src="{{ org_logo }}" />
-=======
-      <img src="{{org_logo}}" />
->>>>>>> 3e656c892565c506e79551e06fb463b2ae5f43a6
     </div>
     <div class="right">
       <h1 class="title">{{ report.name }} </h1><br />
@@ -24,29 +20,17 @@
   <div id="bottom_left"></div>
   <div id="content">
     {% for person in people %}
-<<<<<<< HEAD
     {% if person.membership == "Member" or person.membership == "Regular Attender" %}
     _____ {{ person.last_name }}, {{ person.first_name }} {{ person.name_suffix }} {% if person.membership == "Member" %} * {%endif%} <br />
     {% endif %}
-=======
-      {% if person.membership == "Member" or person.membership == "Regular Attender" %}
-      _____ {{ person.last_name }}, {{ person.first_name }} {{ person.name_suffix }} {% if person.membership == "Member" %} * {%endif%} <br />
-      {% endif %}
->>>>>>> 3e656c892565c506e79551e06fb463b2ae5f43a6
     {% endfor %}
     <h2>
       Visitors:
     </h2>
     {% for person in people %}
-<<<<<<< HEAD
     {% if person.membership == "Visitor" %}
     _____ {{ person.last_name }}, {{ person.first_name }}<br />
     {% endif %}
-=======
-      {% if person.membership == "Visitor" %}
-      _____ {{ person.last_name }}, {{ person.first_name }}<br />
-      {% endif %}
->>>>>>> 3e656c892565c506e79551e06fb463b2ae5f43a6
     {% endfor %}
     <h2>Guests:</h2>
     <p>
