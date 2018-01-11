@@ -1,0 +1,46 @@
+body {
+  size: US-Letter;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1em;
+
+}
+
+#content {
+/*  column-count: 2;
+-webkit-column-count: 2;
+-moz-column-count: 2; */
+width: 7in;
+}
+.header {
+width: 7in;
+height: .6in;
+border-bottom: 0.5px solid;
+margin-bottom: 0.2in;
+
+}
+.left {
+float: left;
+width: 2in;
+height: .6in;
+}
+.right {
+float: right;
+width: 4.5in;
+height: .6in;
+padding-left: 0.5in;
+}
+.full {
+width: 7in;
+height: .2in;
+}
+h1.title {
+display: inline;
+}
+img {
+max-width: 100%;
+max-height: 100%;
+}
+
+td {
+width: 200px;
+}

@@ -1,0 +1,229 @@
+<html>
+  <head>
+    <title>{{ report.name }}  - {{ 'now' | date: "%B %d, %Y" }}</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="stylesheet.css" rel="stylesheet">
+  </head>
+<body onload="loaded()">
+<div class="header">
+  <div class="left">
+    <img src="http://osefc.org/wp-content/uploads/2016/04/web_logo.png" />
+  </div>
+  <div class="right">
+    <h1 class="title">{{ report.name }} </h1><br />
+    <p style="display: inline;">List Updated: {{ list.updated_at  | date: "%B %d, %Y" }}</p>
+  </div>
+</div>
+	<div id="content">
+    <h2>12th Grade</h2>
+    <table>
+{% for person in people order:ascending %}
+      {% if person.grade == 12 %}
+
+    <tr>
+ 	 		<td>{{ person.first_name }} {{ person.last_name }} </td>
+      <td>{{ person.school }}</td>
+      <td>{{ person.membership }}</td>
+      <td>{{ person.age }} </td>
+    </tr>
+			{% endif %}
+{% endfor %}
+			</table>
+
+      <h2>11th Grade</h2>
+			<table>
+			{% for person in people %}
+      {% if person.grade == 11 %}
+    <tr>
+ 	 		<td>{{ person.first_name }} {{ person.last_name }} </td>
+      <td>{{ person.school }}</td>
+      <td>{{ person.membership }}</td>
+      <td>{{ person.age }} </td>
+    </tr>
+			{% endif %}
+{% endfor %}
+    </table>
+
+    <h2>10th Grade</h2>
+    <table>
+{% for person in people %}
+      {% if person.grade == 10 %}
+       <tr>
+ 	 		<td>{{ person.first_name }} {{ person.last_name }} </td>
+      <td>{{ person.school }}</td>
+      <td>{{ person.membership }}</td>
+      <td>{{ person.age }} </td>
+    </tr>
+			{% endif %}
+{% endfor %}
+    </table>
+
+    <h2>9th Grade</h2>
+    <table>
+{% for person in people %}
+      {% if person.grade == 9 %}
+    <tr>
+ 	 		<td>{{ person.first_name }} {{ person.last_name }} </td>
+      <td>{{ person.school }}</td>
+      <td>{{ person.membership }}</td>
+      <td>{{ person.age }} </td>
+    </tr>
+			{% endif %}
+{% endfor %}
+    </table>
+
+    <h2>8th Grade</h2>
+    <table>
+{% for person in people %}
+      {% if person.grade == 8 %}
+    <tr>
+ 	 		<td>{{ person.first_name }} {{ person.last_name }} </td>
+      <td>{{ person.school }}</td>
+      <td>{{ person.membership }}</td>
+      <td>{{ person.age }} </td>
+    </tr>
+			{% endif %}
+{% endfor %}
+    </table>
+
+    <h2>7th Grade</h2>
+    <table>
+{% for person in people %}
+      {% if person.grade == 7 %}
+    <tr>
+ 	 		<td>{{ person.first_name }} {{ person.last_name }} </td>
+      <td>{{ person.school }}</td>
+      <td>{{ person.membership }}</td>
+      <td>{{ person.age }} </td>
+    </tr>
+			{% endif %}
+{% endfor %}
+    </table>
+
+    <h2>6th Grade</h2>
+    <table>
+{% for person in people %}
+      {% if person.grade == 6 %}
+    <tr>
+ 	 		<td>{{ person.first_name }} {{ person.last_name }} </td>
+      <td>{{ person.school }}</td>
+      <td>{{ person.membership }}</td>
+      <td>{{ person.age }} </td>
+    </tr>
+			{% endif %}
+{% endfor %}
+    </table>
+
+    <h2>5th Grade</h2>
+    <table>
+{% for person in people %}
+      {% if person.grade == 5 %}
+    <tr>
+ 	 		<td>{{ person.first_name }} {{ person.last_name }} </td>
+      <td>{{ person.school }}</td>
+      <td>{{ person.membership }}</td>
+      <td>{{ person.age }} </td>
+    </tr>
+			{% endif %}
+{% endfor %}
+    </table>
+
+    <h2>4th Grade</h2>
+    <table>
+{% for person in people %}
+      {% if person.grade == 4 %}
+    <tr>
+ 	 		<td>{{ person.first_name }} {{ person.last_name }} </td>
+      <td>{{ person.school }}</td>
+      <td>{{ person.membership }}</td>
+      <td>{{ person.age }} </td>
+    </tr>
+			{% endif %}
+{% endfor %}
+    </table>
+
+    <h2>3rd Grade</h2>
+    <table>
+{% for person in people %}
+      {% if person.grade == 3 %}
+    <tr>
+ 	 		<td>{{ person.first_name }} {{ person.last_name }} </td>
+      <td>{{ person.school }}</td>
+      <td>{{ person.membership }}</td>
+      <td>{{ person.age }} </td>
+    </tr>
+			{% endif %}
+{% endfor %}
+    </table>
+
+    <h2>2nd Grade</h2>
+    <table>
+{% for person in people %}
+      {% if person.grade == 2 %}
+    <tr>
+ 	 		<td>{{ person.first_name }} {{ person.last_name }} </td>
+      <td>{{ person.school }}</td>
+      <td>{{ person.membership }}</td>
+      <td>{{ person.age }} </td>
+    </tr>
+			{% endif %}
+{% endfor %}
+    </table>
+
+    <h2>1st Grade</h2>
+    <table>
+{% for person in people %}
+      {% if person.grade == 1 %}
+    <tr>
+ 	 		<td>{{ person.first_name }} {{ person.last_name }} </td>
+      <td>{{ person.school }}</td>
+      <td>{{ person.membership }}</td>
+      <td>{{ person.age }} </td>
+    </tr>
+			{% endif %}
+{% endfor %}
+    </table>
+
+    <h2>Kindergarten</h2>
+    <table>
+{% for person in people %}
+      {% if person.grade == 0 %}
+    <tr>
+ 	 		<td>{{ person.first_name }} {{ person.last_name }} </td>
+      <td>{{ person.school }}</td>
+      <td>{{ person.membership }}</td>
+      <td>{{ person.age }} </td>
+    </tr>
+	{% endif %}
+{% endfor %}
+    </table>
+
+    <h2>Pre-K</h2>
+    <table>
+{% for person in people %}
+	{% if person.grade == '-1' %}
+    <tr>
+ 	 		<td>{{ person.first_name }} {{ person.last_name }} </td>
+      <td>{{ person.school }}</td>
+      <td>{{ person.membership }}</td>
+      <td>{{ person.age }} </td>
+    </tr>
+	{% endif %}
+{% endfor %}
+    </table>
+     <h2>Other</h2>
+    <table>
+{% for person in people %}
+	{% if person.grade == FALSE %}
+    <tr>
+ 	 		<td>{{ person.first_name }} {{ person.last_name }} </td>
+      <td>{{ person.school }}</td>
+      <td>{{ person.membership }}</td>
+      <td>{{ person.age }} </td>
+    </tr>
+	{% endif %}
+{% endfor %}
+    </table>
+    </div>
+  </body>
+</html>
