@@ -1,6 +1,5 @@
 body {
   size: US-Letter;
-  font-family: 'Montserrat', sans-serif;
   font-size: 1em;
 
 }
@@ -15,12 +14,12 @@ border-bottom: 0.5px solid;
 margin-bottom: 0.2in;
 
 }
-.left {
+.header_left {
 float: left;
 width: 2in;
 height: .6in;
 }
-.right {
+.header_right {
 float: right;
 width: 4.5in;
 height: .6in;
