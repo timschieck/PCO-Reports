@@ -1,28 +1,27 @@
 <!DOCTYPE html>
+{% assign use_style = true %}
+{% assign custom_style = "[custom stylesheet]" %}
+{% assign org_logo = "[logo_url]" %}
+{% assign people = people | sort: 'last_name' %}
 <html lang="en">
   <head>
     <title>{{ report.name }}  - {{ 'now' | date: "%B %d, %Y" }}</title>
     <meta charset="utf-8">
-    {{ helpers.bootstrap_3 }}
-    <style>
-          table { border-collapse: collapse; margin-top: 20px; }
-          table th { background-color: silver; font-weight: bold; text-align: left; padding: 10px; border:solid 1px #999; }
-          table tr td { border-bottom:solid 1px #999; padding: 10px; vertical-align: top; }
-          table tr td.person { background-color: #888; color: white }
-          table tr td.name { background-color: #eee; border-right:solid 1px #999; border-left:solid 1px #999; }
-          table tr td.inner { border-right:dotted 1px #bbb; }
-      		table tr td.last {border-right:solid 1px #999; }
-    </style>
+    {{ helpers.bootstrap }}
+    {% if use_style %}<link href="{{ custom_style }}" rel="stylesheet">{% endif %}
   </head>
   <body>
-    <div class="container">
-      <h1>
-        {{ list.name }}
-      </h1>
-      <div>
-        {{ organization.name }}
+    <div class="header">
+      <div class="header_left">
+        <img src="{{ org_logo }}" alt="Organization Logo" />
       </div>
-			<table>
+      <div class="header_right">
+        <h1 class="title">{{ report.name }}</h1><br />
+        <p style="display: inline;">List Updated: {{ list.updated_at  | date: "%B %d, %Y" }}</p>
+      </div>
+    </div>
+    <div class="container">
+			<table class="table table-striped">
         <thead>
         	<tr>
           	<th>Child</th>
@@ -33,7 +32,7 @@
             <th>Check-Out</th>
           </tr>
         </thead>
-        {% assign people = people | sort: 'last_name' %}
+        <tbody>
         {% for person in people %}
         	{% if person.primary_contacts == empty %}
         		<tr>
@@ -58,13 +57,14 @@
         </tr>
           {% endfor %}
         {% endfor %}
+      </tbody>
       </table>
     </div>
   </body>
 </html>
 
 {% comment %}
-Attendance Checklist - PCO Reports Version 1.0
+Attendance Checklist - PCO Reports Version 2.0
 http://tschieck.github.io/PCO-Reports/
 Author: Linda Nkosi
 {% endcomment %}
