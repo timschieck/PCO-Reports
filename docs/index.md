@@ -28,7 +28,7 @@ This report is best generated as an HTML file.
 
 # Grade Report
 
-This report generates a list of children with their grade, school, and age. Starting from 12th and going in descending order. Any child younger than Pre-K is put in at the end under "Other".
+This report generates a list of children with their grade, school, and age. Starting from 12th and going in descending order. Any child younger than Pre-K is put in at the end under "No Grade".
 
 It's not a particularly detailed report but is helpful for seeing how many kids are in each grade.
 

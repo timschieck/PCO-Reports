@@ -1,59 +1,28 @@
-{% assign day_of_week = 'now' | date: "%w" %}
+{% assign org_logo = "[logo_url]"%}
 <html>
-  <head>
-    <script>
-function formatDate(date) {
-  var monthNames = [
-    "January", "February", "March",
-    "April", "May", "June", "July",
-    "August", "September", "October",
-    "November", "December"
-  ];
-
-  var day = date.getDate();
-  var monthIndex = date.getMonth();
-  var year = date.getFullYear();
-
-  return day + ' ' + monthNames[monthIndex] + ' ' + year;
-
-}
-      function nextDay(x){
-    var now = new Date();
-    now.setDate(now.getDate() + (x+(7-now.getDay())) % 7);
-    return formatDate(now);
-      }
-
-function loaded () {
-document.getElementById("next_sunday").innerHTML = nextDay(0);
-
-}
-    </script>
-    <title>{{ report.name }}  - {{ 'now' | date: "%B %d, %Y" }}</title>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    <link href="stylesheet.css" rel="stylesheet" >
-    <style>
-#content {
-  column-count: 2;
-  line-height: 1.4em;
-      }
-    </style>
-  </head>
-<body onload="loaded()">
-<div class="header">
-  <div class="left">
-    <!-- img src="logo.png" / -->
-    Insert Logo
+<head>
+  <title>{{ report.name }}  - {{ 'now' | date: "%B %d, %Y" }}</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link href="stylesheet.css" rel="stylesheet" >
+  <style>
+  #content { column-count: 2; line-height: 1.4em; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="left">
+      <img src="{{ org_logo }}" />
+    </div>
+    <div class="right">
+      <h1 class="title">{{ report.name }} </h1><br />
+      <p style="display: inline;">{{ 'now' | date: "%B %d, %Y" }}</p>
+    </div>
   </div>
-  <div class="right">
-    <h1 class="title">{{ report.name }} </h1><br />
-    <p id="next_sunday" style="display: inline;"></p>
-  </div>
-</div>
   <div id="bottom_left"></div>
-	<div id="content">
+  <div id="content">
     {% for person in people %}
     {% if person.membership == "Member" or person.membership == "Regular Attender" %}
- 	 	_____ {{ person.last_name }}, {{ person.first_name }} {{ person.name_suffix }} {% if person.membership == "Member" %} * {%endif%} <br />
+    _____ {{ person.last_name }}, {{ person.first_name }} {{ person.name_suffix }} {% if person.membership == "Member" %} * {%endif%} <br />
     {% endif %}
     {% endfor %}
     <h2>
@@ -61,20 +30,20 @@ document.getElementById("next_sunday").innerHTML = nextDay(0);
     </h2>
     {% for person in people %}
     {% if person.membership == "Visitor" %}
- 	 _____ {{ person.last_name }}, {{ person.first_name }}<br />
+    _____ {{ person.last_name }}, {{ person.first_name }}<br />
     {% endif %}
     {% endfor %}
     <h2>Guests:</h2>
     <p>
+      _________________________________________<br /><br />
+      _________________________________________<br /><br />
+      _________________________________________<br /><br />
       _________________________________________<br />
-      <br />
-      _________________________________________<br />
-      <br />
-      _________________________________________<br />
-      <br />
-      _________________________________________<br />
-
     </p>
-    </div>
-  </body>
+</body>
 </html>
+
+{% comment %}
+Attendance Checklist - PCO Reports Version 1.0
+http://tschieck.github.io/PCO-Reports/
+{% endcomment %}
