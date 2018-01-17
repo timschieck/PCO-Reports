@@ -36,4 +36,18 @@ This report works as either HTML or PDF
 
 [Download Here](https://raw.githubusercontent.com/tschieck/PCO-Reports/master/grade_report.liquid)
 
+# The People Mapper
+
+Of all the reports included in PR 2 this is the least "Plug and Play". It requires two custom fields to be present in Planning Center to work properly.
+
+It plots the addresses of people on a google map. When a pin is clicked on it will show household information. There is also an option to color code pins based on whatever criteria is coded in.
+
+There is a way to use Google to Geocode addresses to Lat/Long coordinates. However, I was struggling to run the script slow enough to not over query the Geocode service.
+
+So for now this is an experimental report, it will be more useful if the geocoding can be down more reliably.
+
+This report runs in HTML mode.
+
+[Download Here](https://raw.githubusercontent.com/tschieck/PCO-Reports/master/people_mapper.liquid)
+
 [Home](../)
