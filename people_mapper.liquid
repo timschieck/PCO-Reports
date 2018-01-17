@@ -1,0 +1,85 @@
+{% assign gMaps_API_key = "Insert API Key here" %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+<meta charset="utf-8">
+<title>{{ report.name }}  - {{ 'now' | date: "%B %d, %Y" }}</title>
+<style>
+/* Always set the map height explicitly to define the size of the div
+* element that contains the map. */
+#map {
+  height: 100%;
+}
+/* Optional: Makes the sample page fill the window. */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+</style>
+</head>
+<body>
+<div id="map"></div>
+<script>
+function initMap() {
+  var myLatLng = {lat: , lng: }; //Use Lat/Long coordinates for your organization
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 13,
+    center: myLatLng
+  });
+  var infoWindow = new google.maps.InfoWindow();
+  var mapData = [
+    {%for person in people %}
+    ["{{person.custom_tabs.custom_features.latitude}}",
+    "{{person.custom_tabs.custom_features.longitude}}",
+    "{{ person.last_name}}",
+    "{{ person.first_name }}",
+    "{{ person.primary_address.postal_address}}",
+    "{{ person.membership }}",
+    "{{ person.custom_tabs.notes.in_a_group }}",
+    "{{ person.id }} "
+  ]{% if forloop.last == false %}, {% endif %}{% endfor %}
+];
+console.log("Addresses loaded: " + mapData.length);
+for (var i = 0; i < mapData.length; i++) {
+
+  //The following is for color-coding pins based on whatever critera you want.
+  if (mapData[i][6] == "true") {
+    var icon = "http://maps.google.com/mapfiles/ms/icons/green-dot.png";
+  } else {
+    var icon = "http://maps.google.com/mapfiles/ms/icons/red-dot.png"
+  }
+  var marker = new google.maps.Marker({
+    map: map,
+    icon: icon,
+    index: i,
+    position: new google.maps.LatLng(mapData[i][0], mapData[i][1]),
+  })
+
+
+  google.maps.event.addListener(marker, 'click', function() {
+    var content = ("<div>"
+    + "<h3>"
+    + "<a href='https://people.planningcenteronline.com/people/"+ mapData[this.index][7] +"'>"
+    + mapData[this.index][2] +"</a></h3><p>"
+    + mapData[this.index][3] + "</p><p>"
+    + mapData[this.index][4] + "</p></div>");
+    infoWindow.setContent(content);
+    infoWindow.open(this.getMap(), this);
+
+  });
+}
+
+}
+</script>
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key={{ gMaps_API_key }}&callback=initMap">
+</script>
+</body>
+</html>
+{% comment %}
+The People Mapper - PCO Reports Version 2.0
+http://tschieck.github.io/PCO-Reports/
+Author: Tim Schieck
+{% endcomment %}
